@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Genmar Oria | Portfolio</title>
+  <style>
+    * {
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+   header, section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px 20px;
+}
+
+    #home { background-image: url('com.png'); }
+    #about { background-image: url('barista.jpg'); }
+    #education { background-image: url('3.jpg'); }
+    #skills { background-image: url('logo.png'); }
+    #projects { background-image: url('calculator.jpg'); }
+
+    #contact {
+      background-image: url('contact.jpg');
+      color: white;
+      padding-top: 80px;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .counter {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header, section {
+        padding: 20px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .overlay {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <div class="overlay">
+      <h1>Hi, I'm Genmar Belmoro Oria</h1>
+      <p>Welcome to my Portfolio</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="overlay">
+      <h2>About Me</h2>
+      <p>I am an aspiring computer specialist with a passion for technology. <br/> 
+         While pursuing my studies, <br/> 
+        I currently work as a part-time barista. In the future, <br/> 
+        I hope to own a coffee shop while building a career in the IT industry.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="overlay">
+      <h2>Education</h2>
+      <p>I graduated from Ipil National High School as an honor student,<br/> and I am currently studying at Eastern Visayas State University, Ormoc.<br/>
+I’m passionate about technology and love to build and learn new things.<br/>taking Bachelor of Science in Information Technology<br/>Eastern Visayas State University - Ormoc Campus</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="overlay">
+      <h2>Skills</h2>
+      <p>HTML, CSS, JavaScript, C++, Git & GitHub</p>
+      <p>Responsive Web Design, Basic Frontend Development</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="overlay">
+      <h2>Projects</h2>
+      <p>1. Personal Portfolio Website</p>
+      <p>2. Simple Calculator (JS)</p>
+      <p>3. Login Page UI</p>
+      <p>4. Todo List Web App</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="overlay">
+      <h2>Contact Me</h2>
+      <p>Phone: 09928385336</p>
+      <p>Email: genmaroria@gmail.com</p>
+      <p>Facebook: <a href="https://www.facebook.com/oria.genmar" target="_blank" style="color:#aaf;">My Profile</a></p>
+    </div>
+  </section>
+
+  <div class="counter" id="visitCounter">Visits: 0</div>
+
+  <script>
+    if (localStorage.getItem("visitCount") === null) {
+      localStorage.setItem("visitCount", 1);
+    } else {
+      let count = parseInt(localStorage.getItem("visitCount"));
+      count++;
+      localStorage.setItem("visitCount", count);
+    }
+    document.getElementById("visitCounter").textContent =
+      "Visits: " + localStorage.getItem("visitCount");
+  </script>
+
+</body>
+</html>
